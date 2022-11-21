@@ -17,7 +17,7 @@
         fetch("https://api.ipify.org?format=json")
         .then((response) => response.json())
         .then((data) => {
-        navigator.clipboard.writeText(data.ip);
+        navigator.clipboard.writeText(`/subscribe ${data.ip}`);
         });
         };
     </script>
@@ -31,7 +31,7 @@
             <p>Your IP address:</p>
             <div id="my-ip"></div>
             <div class="text-center">
-                <button onclick="copyText()" class="copy" id="btn">Click to copy</button>
+                <button onclick="copyText()" class="copy" id="btn">Click to copy with /subscribe</button>
                 <script>
                     const btn = document.getElementById('btn');
                     btn.addEventListener('click', function handleClick() {
